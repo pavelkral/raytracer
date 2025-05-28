@@ -32,11 +32,14 @@ export class Vector3 {
         const len = this.length();
         return len > 0 ? this.multiplyScalar(1 / len) : new (this.constructor as any)(0, 0, 0);
     }
-    static zero(): Vector3 { return new Vector3(0, 0, 0); }
+    static zero(): Vector3 { 
+        return new Vector3(0, 0, 0); 
+    }
 }
 
 // Color class (extends Vector3)
 export class Color extends Vector3 {
+
     constructor(r = 0, g = 0, b = 0) { super(r, g, b); }
 
     // Clamp color components to [0, 1] range
